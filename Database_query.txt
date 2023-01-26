@@ -12,9 +12,11 @@ Use api_primero
 Go
 
 CREATE TABLE contenidos (
+    id int NOT NULL AUTO_INCREMENT,
     nombre varchar(255),
     apellidos varchar(255),
     edad varchar(255),
-    altura varchar(255)
+    altura varchar(255),
+    PRIMARY KEY (id)
     )
     
