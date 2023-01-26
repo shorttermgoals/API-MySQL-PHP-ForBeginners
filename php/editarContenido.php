@@ -5,13 +5,13 @@
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
-    require "conexion.php";
+    require "conexionBBDD.php";
 
     $json = file_get_contents("php://input");
 
-    $objEmpleado = json_decode($json);
+    $objContenido = json_decode($json);
 
-    $sql = "UPDATE usuarios SET usuario='$objEmpleado->usuario', contrasena='$objEmpleado->contrasena', email='$objEmpleado->email' WHERE idUsuario='$objEmpleado->idUsuario'";
+    $sql = "UPDATE contenidos SET nombre='$objContenido->nombre', apellidos='$objContenido->apellidos', edad='$objContenido->edad', altura='$objContenido->altura' WHERE id='$objContenido->id'";
     
     $query = $mysqli->query($sql);
 

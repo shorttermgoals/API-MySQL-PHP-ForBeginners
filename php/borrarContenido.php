@@ -5,13 +5,13 @@
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
-    require "conexion.php";
+    require "conexionBBDD.php";
     
     $json = file_get_contents("php://input");
     
     $objId = json_decode($json);
 
-    $sql = "DELETE FROM usuarios WHERE idUsuario='$objId->idUsuario'";
+    $sql = "DELETE FROM contenidos WHERE id='$objId->id'";
     $query = $mysqli->query($sql);
 
     $jsonRespuesta = array('msg' => 'OK');

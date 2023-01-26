@@ -5,12 +5,12 @@
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
-    require "conexion.php";
+    require "conexionBBDD.php";
     
     // PRUEBAS
-    //$usuario = "cheko";
+    //$nombre = "Pepe";
     
-    $sql = "SELECT * FROM usuarios";
+    $sql = "SELECT * FROM contenidos";
     $query = $mysqli->query($sql);
     
     $datos = array();
@@ -20,4 +20,4 @@
     }
     
     echo json_encode($datos);
-    //echo json_encode(array("usuarios" => $datos));
+    //echo json_encode(array("contenidos" => $datos));

@@ -77,12 +77,14 @@ function mostrarContenidos(){
 
         // Creamos un parrafo para visualizar los elementos del contenido
         const parrafo = document.createElement('p')
-        parrafo.textContent = '${id} - ${nombre} - ${apellidos} - ${edad} - ${altura}'
+        parrafo.textContent = `${id} - ${nombre} - ${apellidos} - ${edad} - ${altura}`
         parrafo.dataset.id = id
 
         // Cremos una separación
         const hr = document.createElement('hr')
 
-        //ME HE QUEDADO EN EL MINUTO 9:18
+        // Vamos a agregar el parrafo y la separación a nuesto elemento padre, en este caso el div de contenido
+        divContenido.appendChild(parrafo)
+        divContenido.appendChild(hr)
     })
 }
