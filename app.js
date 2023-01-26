@@ -1,9 +1,9 @@
 // Variables con las rutas de nuestros archivos del back-end
 
-const urlAgregarContenido = "http://localhost/API_PRIMERO/php/agregarContenido"
-const urlEditarContenido = "http://localhost/API_PRIMERO/php/editarContenido"
-const urlBorrarContenido = "http://localhost/API_PRIMERO/php/borrarContenido"
-const urlObtenerContenido = "http://localhost/API_PRIMERO/php/obtenerContenido"
+const urlAgregarContenido = "http://localhost/2DAM/Primer%20trimestre/API-MySQL-PHP-ForBeginners/php/agregarContenido.php"
+const urlEditarContenido = "http://localhost/2DAM/Primer%20trimestre/API-MySQL-PHP-ForBeginners/php/editarContenido.php"
+const urlBorrarContenido = "http://localhost/2DAM/Primer%20trimestre/API-MySQL-PHP-ForBeginners/php/borrarContenido.php"
+const urlObtenerContenido = "http://localhost/2DAM/Primer%20trimestre/API-MySQL-PHP-ForBeginners/php/obtenerContenido.php"
 
 // Variable donde almacenaremos la lista de contenidos
 
@@ -58,7 +58,10 @@ async function obtenerContenido(){
     // Mete en la lista los datos extraidos del back-end
     // Convertimos la respuesta en un json de los datos
     // Si hay un error se imprimirá en consola
-    listaContenidos = await fetch(urlObtenerContenido).then(repuesta =>respuesta.json()).then(datos => datos).catch(error => console.log(error))
+    listaContenidos = await fetch(urlObtenerContenido)
+    .then(respuesta => respuesta.json())
+    .then(datos => datos)
+    .catch(error => console.log(error))
 
     mostrarContenidos()
 }
@@ -77,7 +80,7 @@ function mostrarContenidos(){
 
         // Creamos un parrafo para visualizar los elementos del contenido
         const parrafo = document.createElement('p')
-        parrafo.textContent = `${id} - ${nombre} - ${apellidos} - ${edad} - ${altura}`
+        parrafo.textContent = `${id}. Nombre: ${nombre} ${apellidos} / Edad: ${edad} / Altura(cm): ${altura}`
         parrafo.dataset.id = id
 
         // Cremos una separación
